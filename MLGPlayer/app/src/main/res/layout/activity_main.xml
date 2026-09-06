@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_black">
+
+    <!-- Fullscreen particle + visualizer canvas -->
+    <com.mlg.player.VisualizerView
+        android:id="@+id/visualizerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Track title glitch text -->
+    <TextView
+        android:id="@+id/txtTrackTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="24dp"
+        android:text="MLG PLAYER 420"
+        android:textColor="@color/neon_green"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:shadowColor="@color/neon_purple"
+        android:shadowRadius="12"
+        android:letterSpacing="0.08" />
+
+    <!-- Playlist panel, left side -->
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#B0000000"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btnPickFolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IZABERI FOLDER"
+            android:textColor="@color/bg_black"
+            android:backgroundTint="@color/neon_green" />
+
+        <ListView
+            android:id="@+id/listPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:cacheColorHint="#00000000"
+            android:divider="@color/neon_purple"
+            android:dividerHeight="1dp" />
+    </LinearLayout>
+
+    <!-- Bottom control bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="#C0000000"
+        android:padding="10dp">
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/neon_green"
+            android:thumbTint="@color/neon_red" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00 / 00:00"
+                android:textColor="@color/neon_yellow"
+                android:layout_marginEnd="12dp" />
+
+            <ImageButton
+                android:id="@+id/btnShuffle"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:src="@android:drawable/ic_menu_sort_by_size"
+                android:contentDescription="Shuffle" />
+
+            <ImageButton
+                android:id="@+id/btnPrev"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:src="@android:drawable/ic_media_previous"
+                android:contentDescription="Prev" />
+
+            <ImageButton
+                android:id="@+id/btnPlayPause"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@android:color/transparent"
+                android:src="@android:drawable/ic_media_play"
+                android:contentDescription="Play" />
+
+            <ImageButton
+                android:id="@+id/btnStop"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:src="@android:drawable/ic_media_pause"
+                android:contentDescription="Stop" />
+
+            <ImageButton
+                android:id="@+id/btnNext"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:src="@android:drawable/ic_media_next"
+                android:contentDescription="Next" />
+
+            <Button
+                android:id="@+id/btnLoop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOOP: OFF"
+                android:textColor="@color/neon_purple"
+                android:background="@android:color/transparent" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
